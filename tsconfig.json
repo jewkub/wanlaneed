@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@wanlaneed/data": ["libs/data/src/index.ts"]
+      "@wanlaneed/data": ["libs/data/src/index.ts"],
+      "@wanlaneed/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

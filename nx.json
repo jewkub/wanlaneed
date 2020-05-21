@@ -19,13 +19,6 @@
     }
   },
   "projects": {
-    "wanlaneed": {
-      "tags": []
-    },
-    "wanlaneed-e2e": {
-      "tags": [],
-      "implicitDependencies": ["wanlaneed"]
-    },
     "web": {
       "tags": []
     },
@@ -37,6 +30,9 @@
       "tags": []
     },
     "data": {
+      "tags": []
+    },
+    "ui": {
       "tags": []
     }
   }
