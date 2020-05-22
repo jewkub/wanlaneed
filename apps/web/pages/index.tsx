@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './index.scss';
-
 import { ReactComponent as NxLogo } from '../assets/nx-logo-white.svg';
 
 export const Index = () => {
