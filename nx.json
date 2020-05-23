@@ -26,13 +26,13 @@
       "tags": [],
       "implicitDependencies": ["web"]
     },
-    "api": {
-      "tags": []
-    },
     "data": {
       "tags": []
     },
     "ui": {
+      "tags": []
+    },
+    "api": {
       "tags": []
     }
   }
