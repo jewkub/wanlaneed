@@ -1,0 +1,26 @@
+{
+  "name": "wanlaneed",
+  "version": "0.1.0",
+  "description": "wanlanid",
+  "scripts": {
+    "api:start": "yarn workspace api start"
+  },
+  "private": true,
+  "workspaces": [
+    "web",
+    "api"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jewkub/wanlaneed.git"
+  },
+  "keywords": [
+    "daily"
+  ],
+  "author": "Jew",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jewkub/wanlaneed/issues"
+  },
+  "homepage": "https://github.com/jewkub/wanlaneed#readme"
+}
