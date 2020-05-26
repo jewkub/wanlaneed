@@ -2,9 +2,10 @@
   "name": "api",
   "version": "0.0.1",
   "scripts": {
-    "start": "node server.js"
+    "start": "ts-node src/server.ts"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "koa": "^2.12.0"
   }
 }
