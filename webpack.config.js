@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './api/src/server.ts',
+  entry: './apps/api/src/server.ts',
   output: {
     filename: 'server.js',
     path: path.resolve(__dirname, 'dist', 'api'),
