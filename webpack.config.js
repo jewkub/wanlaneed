@@ -1,5 +1,6 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './apps/api/src/server.ts',
@@ -19,5 +20,14 @@ module.exports = {
       { test: /\.tsx?$/, loader: "ts-loader" }
     ]
   },
-  mode: 'production'
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        { from: 'apps/api/package.json' },
+        { from: 'apps/api/app.yaml' },
+        { from: 'apps/api/.gcloudignore' }
+      ],
+    }),
+  ],
+  mode: 'production',
 };

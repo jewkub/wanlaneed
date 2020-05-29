@@ -5,6 +5,7 @@ import * as logger from 'koa-logger';
 
 import * as mongoose from 'mongoose';
 import * as secret from '../secret.json';
+import * as bodyParser from 'koa-bodyparser';
 
 import reminderRouter from './routes/reminder';
 
@@ -32,11 +33,15 @@ const
       await next();
       assert.equal('object', typeof ctx, 'some dev did something wrong'); // should not be happened
     } catch (err) {
+      console.error(err.message);
       ctx.status = +err.status || 500;
-      ctx.body = { error: err.message };
+      ctx.body = { status: ctx.status, message: err.message };
       ctx.app.emit('error', err, ctx);
     }
   });
+
+  // body parser
+  app.use(bodyParser());
 
   router.get('/', (ctx, next) => {
     ctx.body = 'hello';
