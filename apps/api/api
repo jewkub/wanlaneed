@@ -1,0 +1,54 @@
+openapi: 3.0.0
+info:
+  version: 0.1.0
+  title: Wanlaneed
+servers:
+  - url: 'https://wanlaneed.el.r.appspot.com'
+paths:
+  /reminder/list:
+    get:
+      summary: 'List all reminders'
+      operationId: listReminder
+      tags:
+        - reminder
+      parameters:
+      responses:
+        '200':
+          description: 'List of all reminders'
+          headers:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Reminder'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Reminder:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+          title:
+            type: string
+          body:
+            type: string
+          cron:
+            type: string
+    Error:
+      type: object
+      required:
+        - status
+        - message
+      properties:
+        status:
+          type: integer
+          format: int32
+        message:
+          type: string
