@@ -1,10 +1,15 @@
+import * as path from 'path';
+import * as dotenv from 'dotenv';
+dotenv.config();
+dotenv.config({ path: path.resolve(__dirname, '../../..', '.env')});
+
 import * as Koa from 'koa';
 import * as Router from '@koa/router';
 import { strict as assert } from 'assert';
 import * as logger from 'koa-logger';
 
 import * as mongoose from 'mongoose';
-import * as secret from '../secret.json';
+// import * as secret from '../secret.json';
 import * as bodyParser from 'koa-bodyparser';
 
 import reminderRouter from './routes/reminder';
@@ -13,11 +18,10 @@ const app = new Koa();
 const router = new Router();
 const
   port: number = +process.env.PORT || 3000,
-  ip: string = process.env.IP || '0.0.0.0',
-  mongoUrl = `mongodb+srv://jew:${ secret.mongodb.jew }@main-g1vvs.gcp.mongodb.net/test?retryWrites=true&w=majority`;
+  ip: string = process.env.IP || '0.0.0.0';
 
 (async () => {
-  await mongoose.connect(mongoUrl, { 
+  await mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   });
