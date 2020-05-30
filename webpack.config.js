@@ -25,7 +25,8 @@ module.exports = {
       patterns: [
         { from: 'apps/api/package.json' },
         { from: 'apps/api/app.yaml' },
-        { from: 'apps/api/.gcloudignore' }
+        { from: 'apps/api/.gcloudignore' },
+        { from: '.env' },
       ],
     }),
   ],
